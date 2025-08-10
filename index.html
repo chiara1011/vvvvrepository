@@ -1,0 +1,180 @@
+<!--
+  callon_style_portfolio.html
+  One-page portfolio inspired by https://www.callonlondon.com (no shop)
+  - Single-file HTML/CSS/JS, no external dependencies
+  - Minimal, image-forward, elegant typography and whitespace
+  - Replace NAME, BIO, and images with your content
+  - Ready to upload as index.html to GitHub Pages
+
+  Notes:
+  - This template is "inspired by" the layout/feel of Callon London (hero, simple nav, collections grid)
+  - No shopping/cart functionality included
+  - Use your own images; recommended sizes: hero 1600x900, tiles ~1200x800
+-->
+
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Nome Cognome — Collezioni</title>
+  <meta name="description" content="Collezioni e lavori di Nome Cognome — design, fotografia, prodotti artigianali">
+  <style>
+    /* Minimal, elegant style inspired by callonlondon.com */
+    :root{--bg:#fff;--text:#0b0b0b;--muted:#666;--accent:#b08968;--maxw:1100px;--radius:12px}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Georgia, 'Times New Roman', serif;color:var(--text);background:#fff;line-height:1.4}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:36px 20px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .logo{font-weight:700;letter-spacing:1px}
+    .menu{display:flex;gap:18px;font-size:14px}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center;margin-top:36px}
+    .hero-text h1{font-size:42px;margin:0 0 10px 0;font-family:Georgia,serif}
+    .hero-text p{color:var(--muted);max-width:54ch}
+    .hero-img{width:100%;height:420px;border-radius:14px;overflow:hidden}
+    .hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+    .collections{margin-top:60px}
+    .collections h2{font-family:Georgia,serif;font-size:28px;margin:0 0 18px 0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{position:relative;border-radius:12px;overflow:hidden;min-height:240px}
+    .tile img{width:100%;height:100%;object-fit:cover;display:block}
+    .tile .meta{position:absolute;left:16px;bottom:16px;background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);padding:10px 12px;border-radius:8px}
+    .meta h3{margin:0;font-size:16px}
+    .meta p{margin:6px 0 0 0;color:var(--muted);font-size:13px}
+
+    .about{margin-top:60px;display:flex;gap:20px;align-items:flex-start}
+    .about img{width:320px;height:260px;object-fit:cover;border-radius:12px}
+    .about .text{max-width:66ch}
+
+    .contact{margin-top:60px;padding:28px;border-radius:12px;background:#f7f5f2}
+    .contact h3{margin:0 0 8px 0}
+
+    footer{margin:60px 0 40px 0;color:var(--muted);font-size:14px;text-align:center}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .about{flex-direction:column}
+      .about img{width:100%;height:auto}
+    }
+    @media (max-width:560px){
+      .grid{grid-template-columns:1fr}
+      nav .menu{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="logo">NOME COGNOME</div>
+      <div class="menu">
+        <a href="#collections">Collezioni</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contatti</a>
+      </div>
+    </nav>
+
+    <section class="hero" aria-label="Hero">
+      <div class="hero-text">
+        <h1>Made with intention</h1>
+        <p>Testurale, sensuale, artigianale — creo oggetti e progetti che durano nel tempo. Qui trovi una selezione delle mie collezioni e lavori recenti.</p>
+        <p style="margin-top:18px"><a href="#collections" style="font-weight:700;border-bottom:1px solid var(--text);padding-bottom:2px">Scopri le collezioni</a></p>
+      </div>
+      <div class="hero-img">
+        <!-- Replace with your hero image -->
+        <img src="https://picsum.photos/seed/hero/1600/1000" alt="Hero image">
+      </div>
+    </section>
+
+    <section id="collections" class="collections">
+      <h2>Collezioni</h2>
+      <div class="grid">
+        <article class="tile" tabindex="0" data-title="Collezione A" data-desc="Serie di pezzi artigianali.">
+          <img src="https://picsum.photos/seed/1/1200/900" alt="Collezione A">
+          <div class="meta">
+            <h3>Collezione A</h3>
+            <p>Materiali naturali e superfici testurate</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" data-title="Collezione B" data-desc="Progetti su misura per interni.">
+          <img src="https://picsum.photos/seed/2/1200/900" alt="Collezione B">
+          <div class="meta">
+            <h3>Collezione B</h3>
+            <p>Oggetti su misura e piccoli lotti</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" data-title="Collezione C" data-desc="Serie limitata fotografica.">
+          <img src="https://picsum.photos/seed/3/1200/900" alt="Collezione C">
+          <div class="meta">
+            <h3>Collezione C</h3>
+            <p>Immagini e oggetti per ambienti contemporanei</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" data-title="Collezione D" data-desc="Sperimentazione materica.">
+          <img src="https://picsum.photos/seed/4/1200/900" alt="Collezione D">
+          <div class="meta">
+            <h3>Collezione D</h3>
+            <p>Forme scultoree e finiture artigianali</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" data-title="Collezione E" data-desc="Design modulare.">
+          <img src="https://picsum.photos/seed/5/1200/900" alt="Collezione E">
+          <div class="meta">
+            <h3>Collezione E</h3>
+            <p>Proposte modulari per spazi domestici</p>
+          </div>
+        </article>
+
+        <article class="tile" tabindex="0" data-title="Collezione F" data-desc="Edizione limitata.">
+          <img src="https://picsum.photos/seed/6/1200/900" alt="Collezione F">
+          <div class="meta">
+            <h3>Collezione F</h3>
+            <p>Edizione limitata e numerata</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <img src="https://picsum.photos/seed/about/800/600" alt="About image">
+      <div class="text">
+        <h2>About</h2>
+        <p>Mi chiamo Nome Cognome e lavoro con materiali tradizionali e tecniche contemporanee per creare progetti che uniscono estetica e funzione. Lavoro su commissione e in piccole serie. Ogni progetto nasce dalla sperimentazione e dall'attenzione al dettaglio.</p>
+        <p style="margin-top:10px;color:var(--muted)">NW1, London</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h3>Contatti</h3>
+      <p>Per richieste di collaborazione o informazioni: <a href="mailto:tuo@email.com">tuo@email.com</a>
+      </p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Nome Cognome — Tutti i diritti riservati
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Simple accessible lightbox for tiles
+    const tiles = document.querySelectorAll('.tile');
+    tiles.forEach(t => t.addEventListener('click', ()=> openLightbox(t)));
+    tiles.forEach(t => t.addEventListener('keypress', (e)=>{ if(e.key==='Enter') openLightbox(t) }));
+    function openLightbox(t){
+      const title = t.dataset.title || '';
+      const desc = t.dataset.desc || '';
+      const src = t.querySelector('img').src;
+      const w = window.open('', '_blank');
+      // open a simple page with image and text
+      w.document.write(`<!doctype html><html><head><meta charset="utf-8"><meta name='viewport' content='width=device-width,initial-scale=1'><title>${title}</title><style>body{margin:0;font-family:Arial,serif;text-align:center;background:#fff;color:#111}img{max-width:95%;height:auto;margin-top:20px;border-radius:6px} .meta{max-width:900px;margin:18px auto;padding:0 16px}</style></head><body><div class="meta"><h1>${title}</h1><p>${desc}</p></div><img src="${src}" alt="${title}"></body></html>`);
+    }
+  </script>
+</body>
+</html>
